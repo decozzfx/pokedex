@@ -1,5 +1,5 @@
 {
-  "name": "supree",
+  "name": "nexa",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -31,6 +31,7 @@
     "react-i18next": "^14.1.0",
     "react-native": "0.73.7",
     "react-native-config": "^1.5.1",
+    "react-native-fast-image": "^8.6.3",
     "react-native-gesture-handler": "^2.16.0",
     "react-native-mmkv": "^2.12.2",
     "react-native-reanimated": "^3.8.1",

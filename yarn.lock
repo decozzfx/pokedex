@@ -8803,6 +8803,71 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nexa@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "nexa@workspace:."
+  dependencies:
+    "@babel/core": ^7.20.0
+    "@babel/preset-env": ^7.20.0
+    "@babel/runtime": ^7.20.0
+    "@react-native-async-storage/async-storage": ^1.23.1
+    "@react-native-community/netinfo": ^11.3.2
+    "@react-native-google-signin/google-signin": ^11.0.1
+    "@react-native-masked-view/masked-view": ^0.3.1
+    "@react-native/babel-preset": 0.73.21
+    "@react-native/eslint-config": 0.73.2
+    "@react-native/metro-config": 0.73.5
+    "@react-native/typescript-config": 0.73.1
+    "@react-navigation/native": ^6.1.17
+    "@react-navigation/native-stack": ^6.9.26
+    "@react-navigation/stack": ^6.3.29
+    "@reduxjs/toolkit": ^2.2.5
+    "@supabase/supabase-js": ^2.43.2
+    "@tanstack/react-query": ^5.37.1
+    "@testing-library/jest-native": ^5.4.2
+    "@testing-library/react-native": ^12.1.2
+    "@types/jest": ^29.4.0
+    "@types/node": ^18.14.1
+    "@types/react": ^18.2.6
+    "@types/react-test-renderer": ^18.0.0
+    "@types/redux-logger": ^3.0.13
+    "@typescript-eslint/parser": ^6.13.1
+    babel-jest: ^29.6.3
+    babel-plugin-inline-dotenv: ^1.7.0
+    babel-plugin-module-resolver: ^5.0.0
+    babel-plugin-root-import: ^6.6.0
+    dayjs: ^1.11.11
+    dotenv: ^16.3.1
+    eslint: ^8.19.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-airbnb-typescript: ^17.1.0
+    eslint-import-resolver-typescript: ^3.6.1
+    eslint-plugin-import: ^2.29.0
+    eslint-plugin-jsx-a11y: ^6.8.0
+    i18next: ^23.11.2
+    jest: ^29.6.3
+    ky: ^1.2.4
+    prettier: 2.8.8
+    react: 18.2.0
+    react-i18next: ^14.1.0
+    react-native: 0.73.7
+    react-native-config: ^1.5.1
+    react-native-fast-image: ^8.6.3
+    react-native-gesture-handler: ^2.16.0
+    react-native-mmkv: ^2.12.2
+    react-native-reanimated: ^3.8.1
+    react-native-restart: ^0.0.27
+    react-native-safe-area-context: ^4.9.0
+    react-native-screens: ^3.30.1
+    react-native-url-polyfill: ^2.0.0
+    react-redux: ^9.1.2
+    react-test-renderer: 18.2.0
+    redux-persist: ^6.0.0
+    typescript: 5.3.3
+    zod: ^3.23.0
+  languageName: unknown
+  linkType: soft
+
 "nocache@npm:^3.0.1":
   version: 3.0.4
   resolution: "nocache@npm:3.0.4"
@@ -9559,6 +9624,16 @@ __metadata:
     react-native-windows:
       optional: true
   checksum: ae17b750e445310573ce33798db67c9b8c50e55cb2ba136e9a9ef8372dd3f7669ce236bb18bf1fa8a426fd1aa9e6b516fb2f593767bd24688242f6847cd37712
+  languageName: node
+  linkType: hard
+
+"react-native-fast-image@npm:^8.6.3":
+  version: 8.6.3
+  resolution: "react-native-fast-image@npm:8.6.3"
+  peerDependencies:
+    react: ^17 || ^18
+    react-native: ">=0.60.0"
+  checksum: 29289cb6b2eae0983c8922b22e2d9de3be07322bb7991c5def19f95eadefaedb0e308ff0b38cc1d0444e8bd4fe94a7621a99a2d3d9298100bcb60b3144677234
   languageName: node
   linkType: hard
 
@@ -10780,70 +10855,6 @@ __metadata:
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
   languageName: node
   linkType: hard
-
-"supree@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "supree@workspace:."
-  dependencies:
-    "@babel/core": ^7.20.0
-    "@babel/preset-env": ^7.20.0
-    "@babel/runtime": ^7.20.0
-    "@react-native-async-storage/async-storage": ^1.23.1
-    "@react-native-community/netinfo": ^11.3.2
-    "@react-native-google-signin/google-signin": ^11.0.1
-    "@react-native-masked-view/masked-view": ^0.3.1
-    "@react-native/babel-preset": 0.73.21
-    "@react-native/eslint-config": 0.73.2
-    "@react-native/metro-config": 0.73.5
-    "@react-native/typescript-config": 0.73.1
-    "@react-navigation/native": ^6.1.17
-    "@react-navigation/native-stack": ^6.9.26
-    "@react-navigation/stack": ^6.3.29
-    "@reduxjs/toolkit": ^2.2.5
-    "@supabase/supabase-js": ^2.43.2
-    "@tanstack/react-query": ^5.37.1
-    "@testing-library/jest-native": ^5.4.2
-    "@testing-library/react-native": ^12.1.2
-    "@types/jest": ^29.4.0
-    "@types/node": ^18.14.1
-    "@types/react": ^18.2.6
-    "@types/react-test-renderer": ^18.0.0
-    "@types/redux-logger": ^3.0.13
-    "@typescript-eslint/parser": ^6.13.1
-    babel-jest: ^29.6.3
-    babel-plugin-inline-dotenv: ^1.7.0
-    babel-plugin-module-resolver: ^5.0.0
-    babel-plugin-root-import: ^6.6.0
-    dayjs: ^1.11.11
-    dotenv: ^16.3.1
-    eslint: ^8.19.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-airbnb-typescript: ^17.1.0
-    eslint-import-resolver-typescript: ^3.6.1
-    eslint-plugin-import: ^2.29.0
-    eslint-plugin-jsx-a11y: ^6.8.0
-    i18next: ^23.11.2
-    jest: ^29.6.3
-    ky: ^1.2.4
-    prettier: 2.8.8
-    react: 18.2.0
-    react-i18next: ^14.1.0
-    react-native: 0.73.7
-    react-native-config: ^1.5.1
-    react-native-gesture-handler: ^2.16.0
-    react-native-mmkv: ^2.12.2
-    react-native-reanimated: ^3.8.1
-    react-native-restart: ^0.0.27
-    react-native-safe-area-context: ^4.9.0
-    react-native-screens: ^3.30.1
-    react-native-url-polyfill: ^2.0.0
-    react-redux: ^9.1.2
-    react-test-renderer: 18.2.0
-    redux-persist: ^6.0.0
-    typescript: 5.3.3
-    zod: ^3.23.0
-  languageName: unknown
-  linkType: soft
 
 "tapable@npm:^2.2.0":
   version: 2.2.1

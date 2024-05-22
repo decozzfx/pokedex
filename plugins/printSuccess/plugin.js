@@ -5,7 +5,7 @@ module.exports = {
     return new Promise((resolve) => {
       console.log("\n");
       console.log(
-        "TheCodingMachine React-Native Supree initialized with success ! 🚀\n"
+        "TheCodingMachine React-Native Nexa initialized with success ! 🚀\n"
       );
       console.log(
         `${green(
@@ -30,13 +30,13 @@ module.exports = {
       console.log("\n");
 
       console.log(
-        "- 📚 If you need to read more about this supree : https://thecodingmachine.github.io/react-native-supree/"
+        "- 📚 If you need to read more about this nexa : https://thecodingmachine.github.io/react-native-nexa/"
       );
       console.log(
-        "- 🤕 If you have some troubles : https://github.com/thecodingmachine/react-native-supree/issues"
+        "- 🤕 If you have some troubles : https://github.com/thecodingmachine/react-native-nexa/issues"
       );
       console.log(
-        "- ⭐ If you love this supree, give us a star, you will be a ray of sunshine in our lives :) https://github.com/thecodingmachine/react-native-supree"
+        "- ⭐ If you love this nexa, give us a star, you will be a ray of sunshine in our lives :) https://github.com/thecodingmachine/react-native-nexa"
       );
 
       if (!previousValues.typescript) {

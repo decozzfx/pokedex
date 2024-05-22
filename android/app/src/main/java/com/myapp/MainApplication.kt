@@ -1,4 +1,4 @@
-package com.supree
+package com.nexa
 
 import android.app.Application
 import com.facebook.react.PackageList

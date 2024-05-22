@@ -68,7 +68,7 @@ function Example() {
       <View style={styles.container}>
         <Text style={{ fontSize: 32, color: "black" }}>Selamat Datang</Text>
         <Text style={{ fontSize: 28, color: "black", top: 8 }}>
-          Aplikasi Supree
+          Aplikasi Nexa
         </Text>
         <Text style={{ fontSize: 15, color: "gray" }}>(Sukolilo Presensi)</Text>
         <Text
