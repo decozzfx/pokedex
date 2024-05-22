@@ -55,6 +55,7 @@ interface textProps {
   bold?: boolean | false;
   backgroundColor?: string | undefined;
   light?: boolean;
+  reguler?: boolean;
   onPress?: () => void;
   ellipsizeMode?: "middle" | "head" | "tail" | "clip";
   numberOfLines?: number;

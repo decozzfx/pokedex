@@ -14,6 +14,7 @@ const TextGeneric: React.FC<textProps> = (props) => {
       color = colors.text,
       align,
       size,
+      reguler,
       textStyle,
       line,
       fontStyle,
@@ -43,7 +44,8 @@ const TextGeneric: React.FC<textProps> = (props) => {
 
     if (fontStyle) newStyle.fontStyle = fontStyle;
 
-    if (light) newStyle.fontWeight = "300";
+    if (light) newStyle.fontWeight = "400";
+    if (reguler) newStyle.fontWeight = "500";
     if (semiBold) newStyle.fontWeight = "600";
     if (bold) newStyle.fontWeight = "800";
 

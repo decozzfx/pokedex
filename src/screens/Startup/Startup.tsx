@@ -1,17 +1,16 @@
-import { useEffect } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
+import { View } from "react-native";
 import { useQuery } from "@tanstack/react-query";
-import { useTranslation } from "react-i18next";
 
 import { useTheme } from "@/theme";
 import { Brand } from "@/components/molecules";
 import { SafeScreen } from "@/components/template";
 
 import type { ApplicationScreenProps } from "@/types/navigation";
+import { TextBase, TextL, TextM } from "@/components/derivatives/text";
+import { generateFontColors } from "@/theme/fonts";
 
 function Startup({ navigation }: ApplicationScreenProps) {
-  const { layout, gutters, fonts } = useTheme();
-  const { t } = useTranslation(["startup"]);
+  const { layout } = useTheme();
 
   const { isSuccess, isFetching, isError } = useQuery({
     queryKey: ["startup"],
@@ -19,13 +18,6 @@ function Startup({ navigation }: ApplicationScreenProps) {
       return Promise.resolve(true);
     },
   });
-
-  useEffect(() => {
-    navigation.reset({
-      index: 0,
-      routes: [{ name: "Example" }],
-    });
-  }, [isSuccess]);
 
   return (
     <SafeScreen>
@@ -38,14 +30,9 @@ function Startup({ navigation }: ApplicationScreenProps) {
         ]}
       >
         <Brand />
-        {isFetching && (
-          <ActivityIndicator size="large" style={[gutters.marginVertical_24]} />
-        )}
-        {isError && (
-          <Text style={[fonts.size_16, fonts.red500]}>
-            {t("startup:error")}
-          </Text>
-        )}
+        <TextBase light color={"#8696BB"} size={15}>
+          Kesehatan adalah aset berharga
+        </TextBase>
       </View>
     </SafeScreen>
   );
