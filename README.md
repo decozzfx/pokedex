@@ -9,6 +9,7 @@
   - Redux Toolkit
   - Redux Persist
   - React-native-mmkv
-  - @react-navigation/stack
+  - React-navigation/stack
+  - React Hook Form
 # MIT
 original by me
