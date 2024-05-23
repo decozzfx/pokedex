@@ -1,15 +1,15 @@
-import { Colors } from '@configs/index';
-import { StyleSheet } from 'react-native';
+import Colors from "@/configs/colors";
+import { StyleSheet } from "react-native";
 
 const Style = StyleSheet.create({
   inputContaner: {
-    flexDirection: 'row',
+    flexDirection: "row",
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
     paddingHorizontal: 12,
     borderWidth: 1,
     height: 36,
-    alignItems: 'center',
+    alignItems: "center",
     borderRadius: 5,
     borderColor: Colors.border.gray2,
   },

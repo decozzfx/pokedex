@@ -1,13 +1,14 @@
 /* eslint-disable no-nested-ternary */
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { View, TouchableOpacity, Animated, Platform } from 'react-native';
-import { Colors } from '@configs/index';
-import Styles from './style';
-import { TextL, TextS } from '@components-derivatives/text';
-import Input from '@components-generics/input';
-import Text from '@components-generics/text';
-import Icon from '@components-generics/icon';
-import InputStringTypes from '@components-derivatives/input/inputString/types';
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { View, TouchableOpacity, Animated, Platform } from "react-native";
+import Colors from "@/configs/colors";
+import Styles from "./style";
+import { TextL, TextS } from "@/components/derivatives/text";
+import Input from "@/components/generics/input";
+import Text from "@/components/generics/text";
+import Icon from "react-native-vector-icons/Ionicons";
+
+import InputStringTypes from "@/components/derivatives/input/inputString/types";
 
 const InputMain: React.FC<InputStringTypes> = (props) => {
   const {
@@ -36,16 +37,16 @@ const InputMain: React.FC<InputStringTypes> = (props) => {
     errorIcon,
     labelFloatToBorder,
     addMl16 = false,
-    screenName = '',
-    index = '',
-    inputName = '',
-    rightText = '',
+    screenName = "",
+    index = "",
+    inputName = "",
+    rightText = "",
     labelWidth,
     disabled,
   } = props;
 
   const [isFocused_, setFocus] = useState<boolean>(isFocused ?? false);
-  const [valuee, setValue] = useState<string>(value ?? '');
+  const [valuee, setValue] = useState<string>(value ?? "");
   const [position] = useState(new Animated.Value(value ? 0 : 22));
   const [opacity] = useState(new Animated.Value(value ? 0 : 30));
   const [size] = useState(new Animated.Value(value ? 12 : 16));
@@ -133,7 +134,7 @@ const InputMain: React.FC<InputStringTypes> = (props) => {
       position,
       size,
       valuee,
-    ],
+    ]
   );
 
   useEffect(() => {
@@ -153,7 +154,7 @@ const InputMain: React.FC<InputStringTypes> = (props) => {
         onChangeText(valText);
       }
     },
-    [isCaseSensitive, onChangeText],
+    [isCaseSensitive, onChangeText]
   );
 
   const _renderError = useMemo(() => {
@@ -195,7 +196,7 @@ const InputMain: React.FC<InputStringTypes> = (props) => {
       <View style={Styles.leftcontainer}>
         <View style={Styles.Iconcontainer}>
           <Icon
-            name={leftIcon}
+            name={leftIcon as any}
             color={
               isFocused_ ? Colors.main.baseBlack : Colors.main.inactiveGray
             }
@@ -211,14 +212,12 @@ const InputMain: React.FC<InputStringTypes> = (props) => {
     }
 
     const main = (
-      <View style={[Styles.Iconcontainer, { alignItems: 'flex-end' }]}>
-        {error && errorIcon ? (
-          errorIcon
-        ) : typeof rightIcon === 'string' ? (
-          <Icon name={rightIcon} color={rightIconColor || 'black'} />
-        ) : (
-          rightIcon
-        )}
+      <View style={[Styles.Iconcontainer, { alignItems: "flex-end" }]}>
+        {error && errorIcon
+          ? errorIcon
+          : typeof rightIcon === "string"
+          ? rightIcon
+          : rightIcon}
       </View>
     );
 
@@ -281,7 +280,7 @@ const InputMain: React.FC<InputStringTypes> = (props) => {
                 backgroundColor:
                   (labelFloatToBorder && value) ||
                   (isFocused_ && labelFloatToBorder)
-                    ? 'white'
+                    ? "white"
                     : undefined,
                 opacity,
                 top:
@@ -296,7 +295,7 @@ const InputMain: React.FC<InputStringTypes> = (props) => {
                     : value || isFocused_
                     ? overrideFloatingStyle?.left || 0
                     : 0,
-                marginBottom: Platform.OS === 'android' ? -5 : 0,
+                marginBottom: Platform.OS === "android" ? -5 : 0,
                 fontSize: fontLabelSize ?? 14,
                 color: !disabled ? Colors.text.grey2 : Colors.text.grey,
                 width: labelWidth,
@@ -304,13 +303,13 @@ const InputMain: React.FC<InputStringTypes> = (props) => {
               }}
             >
               {label}
-              {isRequired ? ' *' : null}
+              {isRequired ? " *" : null}
             </Text>
             <Input
               {...props}
               placeholder={placeholder}
               editable={!disabled && editable}
-              autoCapitalize={isCaseSensitive ? 'none' : 'characters'}
+              autoCapitalize={isCaseSensitive ? "none" : "characters"}
               onFocus={() => focus(true)}
               onBlur={() => focus(false)}
               onChangeText={(value_: string) => updateValue(value_)}

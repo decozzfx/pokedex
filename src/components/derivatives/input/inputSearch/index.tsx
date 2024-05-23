@@ -1,11 +1,11 @@
 /* eslint-disable no-nested-ternary */
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { View, TouchableOpacity, Animated } from 'react-native';
-import { Colors } from '@configs/index';
-import Styles from './styles';
-import Input from '@components-generics/input';
-import InputSearchTypes from '@components-derivatives/input/inputSearch/types';
-import { SearchSvg, ClearSvg } from '@configs/svgs';
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { View, TouchableOpacity, Animated } from "react-native";
+import Colors from "@/configs/colors";
+import Styles from "./styles";
+import Input from "@/components/generics/input";
+import InputSearchTypes from "@/components/derivatives/input/inputSearch/types";
+import Icon from "react-native-vector-icons/Ionicons";
 
 export default function InputSearch(props: InputSearchTypes) {
   const {
@@ -24,7 +24,7 @@ export default function InputSearch(props: InputSearchTypes) {
   } = props;
 
   const [isFocused_, setFocus] = useState<boolean>(isFocused ?? false);
-  const [valuee, setValue] = useState<string>(value ?? '');
+  const [valuee, setValue] = useState<string>(value ?? "");
   const [position] = useState(new Animated.Value(value ? 0 : 22));
   const [opacity] = useState(new Animated.Value(value ? 0 : 30));
   const [size] = useState(new Animated.Value(value ? 12 : 16));
@@ -112,7 +112,7 @@ export default function InputSearch(props: InputSearchTypes) {
       position,
       size,
       valuee,
-    ],
+    ]
   );
 
   useEffect(() => {
@@ -132,7 +132,7 @@ export default function InputSearch(props: InputSearchTypes) {
         onChangeText(valText);
       }
     },
-    [isCaseSensitive, onChangeText],
+    [isCaseSensitive, onChangeText]
   );
 
   const renderClearButton = useMemo(() => {
@@ -142,7 +142,7 @@ export default function InputSearch(props: InputSearchTypes) {
 
     return (
       <TouchableOpacity style={Styles.ml12} onPress={() => onClearText()}>
-        <ClearSvg />
+        <Icon name="Ionicons" />
       </TouchableOpacity>
     );
   }, [onClearText, value]);
@@ -163,13 +163,13 @@ export default function InputSearch(props: InputSearchTypes) {
           ]}
         >
           <View style={Styles.mr12}>
-            <SearchSvg />
+            <Icon name="Ionicons" />
           </View>
           <View style={Styles.rightcontainer}>
             <Input
               {...props}
               placeholder={placeholder}
-              autoCapitalize={isCaseSensitive ? 'none' : 'characters'}
+              autoCapitalize={isCaseSensitive ? "none" : "characters"}
               onFocus={() => focus(true)}
               onBlur={() => focus(false)}
               onChangeText={(value_: string) => updateValue(value_)}

@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
-import { View, TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { TextM } from '@components-derivatives/text';
-import Styles from './style';
-import Colors from '@configs/colors';
+import React, { useMemo } from "react";
+import { View, TouchableOpacity, StyleProp, ViewStyle } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
+import { TextM } from "@/components/derivatives/text";
+import Styles from "./style";
+import Colors from "@/configs/colors";
 
 type Iprops = {
   onToggle?: (val: boolean) => void;
@@ -26,8 +26,8 @@ const InputCheckBox: React.FC<Iprops> = (props) => {
             Styles.containerCheckbox,
             {
               borderWidth: isActive ? 0 : 2,
-              backgroundColor: isActive ? '#2FA12D' : undefined,
-              borderColor: isActive ? '#2FA12D' : '#484C50',
+              backgroundColor: isActive ? "#2FA12D" : undefined,
+              borderColor: isActive ? "#2FA12D" : "#484C50",
             },
           ]}
         >

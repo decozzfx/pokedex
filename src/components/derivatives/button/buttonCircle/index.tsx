@@ -9,7 +9,7 @@
 // ----------------------------------------
 // PACKAGE IMPORTS
 // ----------------------------------------
-import React, { useMemo } from 'react';
+import React, { useMemo } from "react";
 
 // ----------------------------------------
 // LOCAL & CONFIG IMPORTS
@@ -18,10 +18,9 @@ import React, { useMemo } from 'react';
 // ----------------------------------------
 // COMPONENT IMPORTS
 // ----------------------------------------
-import Button from '@components-generics/button';
-import buttonProps from '@components-derivatives/button/buttonFull/types';
-import { PulseAnimatorContainer } from '@components-containers/index';
-import { useTheme } from '@react-navigation/native';
+import Button from "@/components/generics/button";
+import buttonProps from "@/components/derivatives/button/buttonFull/types";
+import { useTheme } from "@react-navigation/native";
 
 const ButtonCircle: React.FC<buttonProps> = (props) => {
   const { onPress, buttonSize, backgroundColor, borderColor, children } = props;
@@ -29,19 +28,17 @@ const ButtonCircle: React.FC<buttonProps> = (props) => {
 
   const RenderButton = useMemo(() => {
     return (
-      <PulseAnimatorContainer>
-        <Button
-          {...props}
-          onPress={onPress}
-          height={buttonSize || 20}
-          width={buttonSize || 20}
-          backgroundColor={backgroundColor}
-          borderColor={borderColor || colors.primary}
-          borderRadius={buttonSize ?? 20}
-        >
-          {children}
-        </Button>
-      </PulseAnimatorContainer>
+      <Button
+        {...props}
+        onPress={onPress}
+        height={buttonSize || 20}
+        width={buttonSize || 20}
+        backgroundColor={backgroundColor}
+        borderColor={borderColor || colors.primary}
+        borderRadius={buttonSize ?? 20}
+      >
+        {children}
+      </Button>
     );
   }, [
     backgroundColor,

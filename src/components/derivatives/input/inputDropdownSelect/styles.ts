@@ -1,5 +1,5 @@
-import { Colors } from '@configs/index';
-import { StyleSheet } from 'react-native';
+import Colors from "@/configs/colors";
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   drowdownContainer: {
@@ -16,18 +16,18 @@ export default StyleSheet.create({
   dropdownText: {
     top: 9,
     left: 15,
-    position: 'absolute',
+    position: "absolute",
     zIndex: 10000,
   },
   dropdownTextStyle: {
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: "Montserrat-SemiBold",
     fontSize: 16,
     marginLeft: 5,
     color: Colors.text.grey55,
   },
   dropdownContainerStyle: {
     borderColor: Colors.border.gray,
-    position: 'absolute',
+    position: "absolute",
     top: 50,
     zIndex: 100000,
   },

@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
-import { Colors } from '@configs/index';
+import Colors from "@/configs/colors";
 
 const Style = StyleSheet.create({
   main: {
@@ -8,8 +8,8 @@ const Style = StyleSheet.create({
     height: 50,
     borderRadius: 25,
     borderWidth: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     borderColor: Colors.button.primary,
     backgroundColor: Colors.button.primary,
   },

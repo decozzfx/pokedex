@@ -1,16 +1,16 @@
-import React, { useCallback, useMemo } from 'react';
-import { View, StyleSheet, ViewStyle, StyleProp } from 'react-native';
+import React, { useCallback, useMemo } from "react";
+import { View, StyleSheet, ViewStyle, StyleProp } from "react-native";
 
 // ----------------------------------------
 // LOCAL & CONFIG IMPORTS
 // ----------------------------------------
-import { Colors } from '@configs/index';
+import Colors from "@/configs/colors";
 
 // ----------------------------------------
 // COMPONENT IMPORTS
 // ----------------------------------------
-import { TextS } from '@components-derivatives/text';
-import { ButtonSmall } from '@components-derivatives/button';
+import { TextS } from "@/components/derivatives/text";
+import { ButtonSmall } from "@/components/derivatives/button";
 
 type IOptions = {
   value: string;
@@ -36,7 +36,7 @@ const InputCheckButtons: React.FC<IProps> = (props) => {
         onSelect(_value);
       }
     },
-    [onSelect],
+    [onSelect]
   );
 
   const _renderOption = useCallback(
@@ -44,7 +44,7 @@ const InputCheckButtons: React.FC<IProps> = (props) => {
       labelRender: string,
       _value: string,
       isActive: boolean | false,
-      index: number,
+      index: number
     ) => {
       return (
         <ButtonSmall
@@ -61,7 +61,7 @@ const InputCheckButtons: React.FC<IProps> = (props) => {
         </ButtonSmall>
       );
     },
-    [backgroundColor, updateValue],
+    [backgroundColor, updateValue]
   );
 
   // ----------------------------------------
@@ -79,7 +79,7 @@ const InputCheckButtons: React.FC<IProps> = (props) => {
               opt.label,
               opt.value,
               opt.value === isValue,
-              index,
+              index
             );
           })}
         </View>
@@ -94,7 +94,7 @@ const InputCheckButtons: React.FC<IProps> = (props) => {
 const Styles = StyleSheet.create({
   grouper: {
     flex: -1,
-    flexDirection: 'row',
+    flexDirection: "row",
     marginTop: 8,
   },
 

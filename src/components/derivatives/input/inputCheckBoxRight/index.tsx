@@ -1,10 +1,10 @@
-import React, { useCallback, useMemo } from 'react';
-import { View, TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { TextM } from '@components-derivatives/text';
-import Toggle from '@components-generics/toggle';
-import Styles from './style';
-import { Colors } from '@configs/index';
+import React, { useCallback, useMemo } from "react";
+import { View, TouchableOpacity, StyleProp, ViewStyle } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
+import { TextM } from "@/components/derivatives/text";
+import Toggle from "@/components/generics/toggle";
+import Styles from "./style";
+import Colors from "@/configs/colors";
 
 type Iprops = {
   onToggle?: (val: boolean) => void;
@@ -24,7 +24,7 @@ const InputCheckBoxRight: React.FC<Iprops> = (props) => {
         onToggle(value);
       }
     },
-    [onToggle],
+    [onToggle]
   );
 
   const RenderBody = useMemo(() => {

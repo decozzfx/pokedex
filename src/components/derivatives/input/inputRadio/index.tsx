@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { View, TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
-import { TextM } from '@components-derivatives/text';
-import Toggle from '@components-generics/toggle';
-import Styles from './style';
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { View, TouchableOpacity, StyleProp, ViewStyle } from "react-native";
+import { TextM } from "@/components/derivatives/text";
+import Toggle from "@/components/generics/toggle";
+import Styles from "./style";
 
 type Iprops = {
   onToggle: (val: boolean) => void;
@@ -26,7 +26,7 @@ const InputRadio: React.FC<Iprops> = (props) => {
         }
       }
     },
-    [active, onToggle],
+    [active, onToggle]
   );
 
   const RenderMain = useMemo(() => {

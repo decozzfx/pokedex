@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import DropDownPicker from 'react-native-dropdown-picker';
+import React, { useMemo } from "react";
+import DropDownPicker from "react-native-dropdown-picker";
 import {
   Animated,
   Platform,
@@ -7,12 +7,12 @@ import {
   StyleProp,
   View,
   ViewStyle,
-} from 'react-native';
-import styles from './styles';
-import Text from '@components-generics/text';
-import { Colors } from '@configs/index';
-import { DropdownSelectType } from './types';
-import { TextS } from '@components-derivatives/text';
+} from "react-native";
+import styles from "./styles";
+import Text from "@/components/generics/text";
+import Colors from "@/configs/colors";
+import { DropdownSelectType } from "./types";
+import { TextS } from "@/components/derivatives/text";
 
 export default function DropdownSelectApproval(props: DropdownSelectType) {
   const {
@@ -20,14 +20,14 @@ export default function DropdownSelectApproval(props: DropdownSelectType) {
     setSelectedValue,
     selectedValue,
     dropdownOption = [],
-    error = '',
+    error = "",
     style,
     loading,
     placeholder,
-    listMode = 'SCROLLVIEW',
-    screenName = '',
-    index = '',
-    inputName = '',
+    listMode = "SCROLLVIEW",
+    screenName = "",
+    index = "",
+    inputName = "",
     fontLabelSize,
     isRequired,
     isDropdownOpen,
@@ -36,12 +36,12 @@ export default function DropdownSelectApproval(props: DropdownSelectType) {
 
   const size = useMemo(
     () => new Animated.Value(selectedValue ? 12 : 16),
-    [selectedValue],
+    [selectedValue]
   );
 
   const line = useMemo(
     () => new Animated.Value(selectedValue ? 16 : 16),
-    [selectedValue],
+    [selectedValue]
   );
 
   const scrollViewProps: ScrollViewProps = useMemo(
@@ -49,7 +49,7 @@ export default function DropdownSelectApproval(props: DropdownSelectType) {
       scrollEnabled: true,
       nestedScrollEnabled: true,
     }),
-    [],
+    []
   );
 
   const mapItems = useMemo(
@@ -58,7 +58,7 @@ export default function DropdownSelectApproval(props: DropdownSelectType) {
         value: data?.value,
         label: data?.label,
       })),
-    [dropdownOption],
+    [dropdownOption]
   );
 
   const dropdownStyle: StyleProp<ViewStyle> = useMemo(
@@ -68,18 +68,18 @@ export default function DropdownSelectApproval(props: DropdownSelectType) {
       selectedValue ? styles.paddingTop20 : {},
       style,
     ],
-    [error, selectedValue, style],
+    [error, selectedValue, style]
   );
 
   const dropdownTextStyle: StyleProp<ViewStyle> = useMemo(
     () => [
       styles.dropdownText,
       {
-        marginBottom: Platform.OS === 'android' ? -10 : 0,
+        marginBottom: Platform.OS === "android" ? -10 : 0,
         fontSize: fontLabelSize ?? 14,
       },
     ],
-    [fontLabelSize],
+    [fontLabelSize]
   );
 
   return (
@@ -92,8 +92,8 @@ export default function DropdownSelectApproval(props: DropdownSelectType) {
         line={Number(line)}
         style={dropdownTextStyle}
       >
-        {selectedValue ? placeholder : ''}
-        {isRequired ? ' *' : null}
+        {selectedValue ? placeholder : ""}
+        {isRequired ? " *" : null}
       </Text>
       <DropDownPicker
         testID={screenName + inputName + index}
@@ -116,7 +116,7 @@ export default function DropdownSelectApproval(props: DropdownSelectType) {
         dropDownContainerStyle={styles.dropdownContainerStyle}
         iconContainerStyle={styles.dropdownContainerStyle}
       />
-      {error !== '' && (
+      {error !== "" && (
         <TextS
           textStyle="semiBold"
           color={Colors.text.red25}

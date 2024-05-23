@@ -1,7 +1,7 @@
-import React, { useCallback, useMemo, useState } from 'react';
-import { View } from 'react-native';
-import InputString from '@components-derivatives/input/inputString';
-import InputStringTypes from '@components-derivatives/input/inputString/types';
+import React, { useCallback, useMemo, useState } from "react";
+import { View } from "react-native";
+import InputString from "@/components/derivatives/input/inputString";
+import InputStringTypes from "@/components/derivatives/input/inputString/types";
 
 const InputSecure: React.FC<InputStringTypes> = (props) => {
   const { onChangeText } = props;
@@ -13,7 +13,7 @@ const InputSecure: React.FC<InputStringTypes> = (props) => {
         onChangeText(value);
       }
     },
-    [onChangeText],
+    [onChangeText]
   );
 
   const RenderMain = useMemo(() => {
@@ -23,7 +23,7 @@ const InputSecure: React.FC<InputStringTypes> = (props) => {
           {...props}
           secureTextEntry={isSecure}
           onChangeText={(value: string) => updateValue(value)}
-          rightIcon={isSecure ? 'hide' : 'unhide'}
+          rightIcon={isSecure ? "hide" : "unhide"}
           onRightIconPress={() => setIsSecure(!isSecure)}
         />
       </View>

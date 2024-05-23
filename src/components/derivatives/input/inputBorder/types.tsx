@@ -1,8 +1,15 @@
-import { ViewStyle, TextInputProps, StyleProp } from 'react-native';
+import React from "react";
+import {
+  ViewStyle,
+  TextInputProps,
+  StyleProp,
+  KeyboardTypeOptions,
+} from "react-native";
 
 export interface InputBorderProps {
   value: string;
   placeholder: string;
+  leftIcon?: React.ReactNode;
   onChangeText?(text: string): void;
   onEndEditing?: () => void;
   editable?: boolean;
@@ -13,6 +20,6 @@ export interface InputBorderProps {
   color?: string;
   multiline?: boolean;
   autoCapitalize?: any;
-  textAlignVertical?: string;
-  keyboardType?: string | undefined;
+  textAlignVertical?: "center" | "auto" | "top" | "bottom" | undefined;
+  keyboardType?: KeyboardTypeOptions | undefined;
 }

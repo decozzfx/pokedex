@@ -1,27 +1,27 @@
-import { Colors } from '@configs/index';
-import { StyleSheet } from 'react-native';
+import Colors from "@/configs/colors";
+import { StyleSheet } from "react-native";
 
 const Style = StyleSheet.create({
   container: {
     flex: -1,
-    flexDirection: 'row',
+    flexDirection: "row",
     paddingVertical: 14,
     marginHorizontal: 10,
-    alignItems: 'center',
+    alignItems: "center",
   },
   label: {
     flex: 6,
   },
   labelRight: {
-    alignItems: 'flex-end',
-    textAlign: 'right',
-    justifyContent: 'flex-end',
+    alignItems: "flex-end",
+    textAlign: "right",
+    justifyContent: "flex-end",
     flex: 4,
   },
   toggle: {
-    alignItems: 'flex-end',
-    textAlign: 'right',
-    justifyContent: 'flex-end',
+    alignItems: "flex-end",
+    textAlign: "right",
+    justifyContent: "flex-end",
     flex: 2,
   },
   line: {

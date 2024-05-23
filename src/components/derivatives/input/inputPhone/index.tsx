@@ -1,19 +1,19 @@
-import React, { useMemo } from 'react';
-import { View, StyleSheet, ViewStyle } from 'react-native';
+import React, { useMemo } from "react";
+import { View, StyleSheet, ViewStyle } from "react-native";
 
 // ----------------------------------------
 // LOCAL & CONFIG IMPORTS
 // ----------------------------------------
-import { Colors } from '@configs/index';
+import Colors from "@/configs/colors";
 
 // ----------------------------------------
 // COMPONENT IMPORTS
 // ----------------------------------------
-import InputString from '../inputString';
-import Button from '@components-generics/button';
-import { TextS } from '@components-derivatives/text';
-import { useTheme } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import InputString from "../inputString";
+import Button from "@/components/generics/button";
+import { TextS } from "@/components/derivatives/text";
+import { useTheme } from "@react-navigation/native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 interface IProps {
   rightIcon?: any;
@@ -70,7 +70,7 @@ const InputPhone: React.FC<IProps> = (props) => {
               height={36}
               width={48}
               borderRadius={8}
-              color={colors.buttonEnabled}
+              color={colors.border}
               onPress={onPressButton}
             >
               <TextS bold color={colors.text}>
@@ -105,9 +105,9 @@ const InputPhone: React.FC<IProps> = (props) => {
           </View>
           <View
             style={{
-              justifyContent: 'center',
-              alignItems: 'center',
-              alignSelf: 'center',
+              justifyContent: "center",
+              alignItems: "center",
+              alignSelf: "center",
             }}
           >
             <TextS
@@ -121,7 +121,7 @@ const InputPhone: React.FC<IProps> = (props) => {
       </View>
     );
   }, [
-    colors.buttonEnabled,
+    colors.border,
     colors.text,
     error,
     hint,
@@ -149,7 +149,7 @@ const InputPhone: React.FC<IProps> = (props) => {
 const Styles = StyleSheet.create({
   grouper: {
     flex: -1,
-    flexDirection: 'row',
+    flexDirection: "row",
     marginTop: 8,
   },
 });

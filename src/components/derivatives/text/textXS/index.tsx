@@ -5,6 +5,7 @@ import textProps from "@/components/generics/text/types";
 
 const TextXS: React.FC<textProps> = (props) => {
   const { children } = props;
+  console.log("🚀 ~ props:", props);
 
   const RenderMain = useMemo(() => {
     return (

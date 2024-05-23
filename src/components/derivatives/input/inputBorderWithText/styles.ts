@@ -1,5 +1,5 @@
-import { Colors } from '@configs/index';
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
+import Colors from "@/configs/colors";
 
 export default StyleSheet.create({
   inputContainer: {
@@ -7,8 +7,8 @@ export default StyleSheet.create({
     height: 46,
     borderRadius: 16,
     paddingHorizontal: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   input: {
     flex: 1,

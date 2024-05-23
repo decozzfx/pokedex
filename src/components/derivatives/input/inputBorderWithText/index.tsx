@@ -1,9 +1,9 @@
-import { View, TextInput } from 'react-native';
-import React from 'react';
-import styles from './styles';
-import Spacer from '@components-containers/spacer';
-import { TextS, TextXS } from '@components-derivatives/text';
-import { Colors } from '@configs/index';
+import { View, TextInput } from "react-native";
+import React from "react";
+import styles from "./styles";
+import { TextS, TextXS } from "@/components/derivatives/text";
+import Colors from "@/configs/colors";
+import Gap from "@/components/generics/gap/Gap";
 
 const InputBorderWithText = (props: any) => {
   const {
@@ -35,7 +35,7 @@ const InputBorderWithText = (props: any) => {
       return (
         <>
           <TextS>{title}</TextS>
-          <Spacer height={5} />
+          <Gap height={5} />
         </>
       );
     }
@@ -51,7 +51,7 @@ const InputBorderWithText = (props: any) => {
         {renderTitle()}
         <View style={styles.inputContainer}>
           {renderLeftIcon()}
-          <Spacer width={10} />
+          <Gap width={10} />
           <TextInput
             placeholder={placeholder}
             value={value}
@@ -66,7 +66,7 @@ const InputBorderWithText = (props: any) => {
         </View>
         {error && (
           <>
-            <Spacer height={5} />
+            <Gap height={5} />
             <TextXS color={Colors.main.bloodRed}>{error}</TextXS>
           </>
         )}

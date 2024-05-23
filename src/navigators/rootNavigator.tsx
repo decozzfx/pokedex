@@ -1,7 +1,8 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { RootStackNavigationTypes, routesEnum } from "./routes";
-import { Example, Auth } from "@/screens";
+import { Home, Auth, Jadwal } from "@/screens";
+import DrawerNavigator from "@/navigators/mainDrawer";
 
 const Stack = createNativeStackNavigator<RootStackNavigationTypes>();
 const { Navigator } = Stack;
@@ -14,7 +15,9 @@ function RootNavigator() {
   return (
     <Navigator key={variant} screenOptions={{ headerShown: false }}>
       <Screen name={routesEnum.Auth} component={Auth} />
-      <Screen name={routesEnum.Example} component={Example} />
+      <Screen name={routesEnum.Home} component={Home} />
+      <Screen name={routesEnum.Jadwal} component={Jadwal} />
+      <Screen name={routesEnum.MainDrawer} component={DrawerNavigator} />
     </Navigator>
   );
 }

@@ -1,6 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
-import { Colors, Sizes } from '@configs/index';
+import Sizes from "@/configs/sizes";
+import Colors from "@/configs/colors";
 
 const Style = StyleSheet.create({
   main: {
@@ -11,7 +12,7 @@ const Style = StyleSheet.create({
     letterSpacing: 0,
     color: Colors.main.fontGray,
     padding: 0,
-    width: '100%',
+    width: "100%",
   },
 });
 

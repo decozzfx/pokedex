@@ -26,6 +26,7 @@ interface Iprops {
   onBlur?: () => void;
   onChangeText?: (val: string) => void;
   testID?: string | undefined;
+  value?: string | undefined;
 }
 
 const InputGeneric: React.FC<Iprops> = (props) => {
@@ -37,7 +38,7 @@ const InputGeneric: React.FC<Iprops> = (props) => {
     editable = true,
     placeholderTextColor = useTheme().colors.gray400,
   } = props;
-  const { colors } = useTheme();
+
   const inputRef = useRef(null);
 
   const getComposedStyle = useCallback(() => {
@@ -68,7 +69,7 @@ const InputGeneric: React.FC<Iprops> = (props) => {
     }
 
     if (light) {
-      newStyle.fontWeight = "300";
+      newStyle.fontWeight = "400";
     }
 
     composedStyle.push(newStyle);
@@ -81,6 +82,7 @@ const InputGeneric: React.FC<Iprops> = (props) => {
     return (
       <RTextInput
         editable={editable}
+        value={props.value}
         placeholderTextColor={placeholderTextColor}
         autoCorrect={false}
         underlineColorAndroid="transparent"
