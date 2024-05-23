@@ -70,7 +70,7 @@ function Auth({ navigation }: ApplicationScreenProps) {
     if (dataUser.token) {
       navigateToHome();
     }
-  }, [dataUser.token]);
+  }, [dataUser.token, navigation]);
 
   const onSubmit = async (data: IFormValues) => {
     await mutateAsync(data, {

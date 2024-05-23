@@ -1,11 +1,11 @@
+import colors from "@/configs/colors";
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#FFFFFF",
+    padding: 24,
   },
   containerInput: {
     width: "82%",
@@ -40,5 +40,14 @@ export default StyleSheet.create({
     height: 52,
     justifyContent: "center",
     alignItems: "center",
+  },
+  topTapBar: {
+    backgroundColor: colors.background.checkBoxBlue,
+    paddingVertical: 16,
+    paddingHorizontal: 32,
+    borderRadius: 100,
+    justifyContent: "center",
+    height: 50,
+    marginLeft: 12,
   },
 });
