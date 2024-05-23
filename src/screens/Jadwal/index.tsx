@@ -89,22 +89,8 @@ function Jadwal() {
       <ScrollView style={styles.container}>
         {isPending && <TextM>Loading...</TextM>}
         {listDokter?.map((dokter) => (
-          <TouchableOpacity>
-            <View
-              style={{
-                padding: 20,
-                borderRadius: 12,
-                shadowColor: "#5A75A7",
-                shadowOffset: {
-                  width: 0,
-                  height: 1,
-                },
-                shadowOpacity: 0.4,
-                shadowRadius: 1.41,
-                elevation: 1,
-                marginBottom: 16,
-              }}
-            >
+          <View style={styles.cardDokter}>
+            <TouchableOpacity>
               {/* Header */}
               <View
                 style={{
@@ -182,8 +168,8 @@ function Jadwal() {
                   Detail
                 </TextL>
               </TouchableOpacity>
-            </View>
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </View>
         ))}
       </ScrollView>
     </SafeScreen>

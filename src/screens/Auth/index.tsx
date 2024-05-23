@@ -52,8 +52,8 @@ function Auth({ navigation }: ApplicationScreenProps) {
     formState: { errors },
   } = useForm<IFormValues>({
     defaultValues: {
-      username: "testeruser",
-      password: "rekrutnexa24",
+      username: "",
+      password: "",
     },
   });
 

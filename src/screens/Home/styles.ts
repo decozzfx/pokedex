@@ -1,3 +1,4 @@
+import colors from "@/configs/colors";
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
@@ -39,5 +40,14 @@ export default StyleSheet.create({
     height: 52,
     justifyContent: "center",
     alignItems: "center",
+  },
+  cardDokterTerderkat: {
+    padding: 20,
+    borderRadius: 12,
+    backgroundColor: "white",
+    borderWidth: 0.3,
+    borderColor: colors.border.gray39,
+    elevation: 1,
+    marginBottom: 16,
   },
 });

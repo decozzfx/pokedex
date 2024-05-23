@@ -90,6 +90,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('decoz123.keystore')
+            storePassword 'password123'
+            keyAlias 'decoz'
+            keyPassword 'password123'
+        }
     }
     buildTypes {
         debug {

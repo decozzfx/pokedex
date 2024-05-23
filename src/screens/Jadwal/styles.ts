@@ -6,6 +6,7 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
     padding: 24,
+    paddingBottom: 20,
   },
   containerInput: {
     width: "82%",
@@ -49,5 +50,14 @@ export default StyleSheet.create({
     justifyContent: "center",
     height: 50,
     marginLeft: 12,
+  },
+  cardDokter: {
+    padding: 20,
+    borderRadius: 12,
+    backgroundColor: "white",
+    elevation: 1,
+    borderWidth: 0.3,
+    borderColor: colors.border.gray39,
+    marginBottom: 20,
   },
 });

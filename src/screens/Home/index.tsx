@@ -248,21 +248,7 @@ function Home() {
 
         {isPending && <TextM>Loading...</TextM>}
         {dokterTerdekat && (
-          <TouchableOpacity
-            style={{
-              padding: 20,
-              borderRadius: 12,
-              shadowColor: "#5A75A7",
-              shadowOffset: {
-                width: 0,
-                height: 1,
-              },
-              shadowOpacity: 0.4,
-              shadowRadius: 1.41,
-              elevation: 1,
-              marginBottom: 16,
-            }}
-          >
+          <TouchableOpacity style={styles.cardDokterTerderkat}>
             {/* Header */}
             <View
               style={{
