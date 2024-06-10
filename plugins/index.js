@@ -8,7 +8,7 @@ const plugins = [typescriptPlugin, printSuccessPlugin];
 /**
  * @typedef {Object} Plugin
  * @property promptsOptions {Object|null} the plugin prompt property
- * @property apply {Function} the refactoring to apply to the nexa
+ * @property apply {Function} the refactoring to apply to the pokedex
  */
 
 /**
