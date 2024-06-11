@@ -12,7 +12,7 @@ export type useNavigationProps = NativeStackNavigationProp<RootStackList>;
 // Http Types
 export interface PokemonResultProps {
   name: string;
-  url: string;
+  id: string;
 }
 
 export interface SearchStateProps {
@@ -32,10 +32,8 @@ export interface StatsResultProps {
 }
 
 export interface PokemonDetailProps {
-  num: number;
   name: string;
-  hp: number;
-  colorTheme: string;
+  id: string;
 }
 export interface PokemonDetailStateProps {
   data: PokemonDetailProps;
@@ -46,5 +44,5 @@ export interface PokemonSaveStateProps {
 }
 
 export interface PokemonSelectedStateProps {
-  data: number[];
+  data: string[];
 }

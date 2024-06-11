@@ -1,27 +1,25 @@
-import { store } from "../store"
+import { store } from "../store";
 
-const setPokemonSelected = (num: number) => {
-    const pokemon = store.getState().pokemonSelected.data
-    if (pokemon.includes(num)) {
-        return {
-            type: "SET_POKEMON_SELECTED",
-            payload: pokemon.filter((item: number) => item !== num)
-        }
-    }
-    else {
-        return {
-            type: "SET_POKEMON_SELECTED",
-            payload: [...pokemon, num]
-        }
-    }
-}
+const setPokemonSelected = (id: string) => {
+  const pokemon = store.getState().pokemonSelected.data;
+  if (pokemon.includes(id)) {
+    return {
+      type: "SET_POKEMON_SELECTED",
+      payload: pokemon.filter((item: string) => item !== id),
+    };
+  } else {
+    return {
+      type: "SET_POKEMON_SELECTED",
+      payload: [...pokemon, id],
+    };
+  }
+};
 
 const emptyPokemonSelected = () => {
-    return {
-        type: "EMPTY_POKEMON_SELECTED",
-        payload: []
-    }
-}
+  return {
+    type: "EMPTY_POKEMON_SELECTED",
+    payload: [],
+  };
+};
 
-
-export { setPokemonSelected, emptyPokemonSelected }
+export { setPokemonSelected, emptyPokemonSelected };

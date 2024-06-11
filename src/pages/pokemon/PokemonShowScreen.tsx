@@ -1,21 +1,16 @@
-import { Image, ScrollView, StyleSheet, View } from "react-native";
-import React, { FC, useEffect } from "react";
-import {
-  Badge,
-  Evolution,
-  Information,
-  PokemonDetailLayout,
-  Section,
-  Statistic,
-} from "@components";
-import { constant, helper, theme } from "@utils";
+import { Alert, Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import React, { FC } from "react";
+import { PokemonDetailLayout } from "@components";
+import { color, constant, helper, theme } from "@utils";
 import { Text } from "@ui-kitten/components";
-import { http } from "@services";
 import { PageProps } from "@types";
 import { useDispatch } from "react-redux";
-import { setPokemonDetail } from "src/redux/actions/pokemonDetailAction";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import {
+  removePokemon,
+  savePokemon,
+} from "src/redux/actions/pokemonSaveAction";
 
 export const fetchPokemonDetail = async (id: string) => {
   try {
@@ -26,26 +21,36 @@ export const fetchPokemonDetail = async (id: string) => {
 
 const PokemonShowScreen: FC<PageProps<"PokemonShow">> = ({ route }) => {
   const pokemonId = route.params.id;
+  const name = route.params.name;
   const { data, isSuccess, isLoading } = useQuery({
     queryKey: ["detail-pokemon", pokemonId],
     queryFn: async () => await fetchPokemonDetail(pokemonId),
     enabled: !!pokemonId,
   });
-  const detail = data;
 
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   if (isSuccess) {
-  //     dispatch(
-  //       setPokemonDetail({
-  //         num: data?.num,
-  //         name: data?.name,
-  //         hp: detail?.stats["hp"],
-  //         colorTheme: helper.getPokemmonColor(detail?.types[0]),
-  //       })
-  //     );
-  //   }
-  // }, [isSuccess, route.params.id]);
+  const dispatch = useDispatch();
+  const saveToFavPokemon = () => {
+    dispatch(
+      savePokemon({
+        name,
+        id: pokemonId,
+      })
+    );
+    onSavedPokemon();
+  };
+
+  const onSavedPokemon = () => {
+    Alert.alert(
+      "Info",
+      "This pokemon is successfully saved!",
+      [
+        {
+          text: "OK",
+        },
+      ],
+      { cancelable: false }
+    );
+  };
 
   return (
     <PokemonDetailLayout isLoading={isLoading}>
@@ -70,6 +75,26 @@ const PokemonShowScreen: FC<PageProps<"PokemonShow">> = ({ route }) => {
           <Text style={styles.title} category="h4">
             {data.name}
           </Text>
+          <View
+            style={{
+              flexDirection: "row",
+              paddingHorizontal: 18,
+              justifyContent: "center",
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                backgroundColor: color.primary,
+                paddingHorizontal: 16,
+                paddingVertical: 6,
+                borderRadius: 10,
+                marginVertical: 10,
+              }}
+              onPress={saveToFavPokemon}
+            >
+              <Text style={{ color: "white" }}>Save Pokemon</Text>
+            </TouchableOpacity>
+          </View>
           {/* <View style={styles.type}>
             {detail?.types.map((type: string, key: number) => (
               <Badge

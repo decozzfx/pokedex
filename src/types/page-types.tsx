@@ -1,7 +1,7 @@
 type RootStackList = {
   Splash: undefined;
   Home: undefined;
-  PokemonShow: { id: string };
+  PokemonShow: { id: string; name: string };
   PokemonCatch: { number: number; id: string };
   PokemonSave: undefined;
   About: undefined;

@@ -54,9 +54,7 @@ const HomeScreen = () => {
           ListEmptyComponent={() => <Text>No data found</Text>}
           ListFooterComponent={() => (isFetching ? <FooterLoading /> : null)}
           renderItem={({ item, index }) => (
-            <View key={`wrapper-${index + item.name}`} style={styles.wrapper}>
-              <Pokemon key={`pokemon-${item.name + index}`} {...item} />
-            </View>
+            <Pokemon key={`pokemon-${item.name + index}`} {...item} />
           )}
         />
       )}
