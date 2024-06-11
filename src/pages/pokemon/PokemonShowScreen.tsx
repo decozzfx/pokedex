@@ -3,14 +3,13 @@ import React, { FC } from "react";
 import { PokemonDetailLayout } from "@components";
 import { color, constant, helper, theme } from "@utils";
 import { Text } from "@ui-kitten/components";
-import { PageProps } from "@types";
-import { useDispatch } from "react-redux";
+import { PageProps, PokemonSaveStateProps } from "@types";
+import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import {
-  removePokemon,
-  savePokemon,
-} from "src/redux/actions/pokemonSaveAction";
+import { savePokemon } from "src/redux/actions/pokemonSaveAction";
+import { showMessage } from "react-native-flash-message";
+import { State } from "src/redux/reducer";
 
 export const fetchPokemonDetail = async (id: string) => {
   try {
@@ -36,21 +35,17 @@ const PokemonShowScreen: FC<PageProps<"PokemonShow">> = ({ route }) => {
         id: pokemonId,
       })
     );
-    onSavedPokemon();
+    showMessage({
+      message: "Saved",
+      description: "This pokemon is successfully saved!",
+      type: "success",
+    });
   };
 
-  const onSavedPokemon = () => {
-    Alert.alert(
-      "Info",
-      "This pokemon is successfully saved!",
-      [
-        {
-          text: "OK",
-        },
-      ],
-      { cancelable: false }
-    );
-  };
+  const pokemonSaveState: PokemonSaveStateProps = useSelector(
+    (state: State) => state.pokemonSave
+  );
+  const isSaved = pokemonSaveState.data.find((item) => item.id === pokemonId);
 
   return (
     <PokemonDetailLayout isLoading={isLoading}>
@@ -84,12 +79,13 @@ const PokemonShowScreen: FC<PageProps<"PokemonShow">> = ({ route }) => {
           >
             <TouchableOpacity
               style={{
-                backgroundColor: color.primary,
+                backgroundColor: Boolean(isSaved) ? color.dark : color.primary,
                 paddingHorizontal: 16,
                 paddingVertical: 6,
                 borderRadius: 10,
                 marginVertical: 10,
               }}
+              disabled={Boolean(isSaved)}
               onPress={saveToFavPokemon}
             >
               <Text style={{ color: "white" }}>Save Pokemon</Text>
